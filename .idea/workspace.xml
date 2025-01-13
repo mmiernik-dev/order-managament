@@ -4,69 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7039a778-e59a-4896-9552-cfb9793b0664" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeception.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/commandlinetools/Symfony_11_01_2025__13_21.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/commandlinetools/schemas/frameworkDescriptionVersion1.1.4.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/1f223759-0b51-4e1f-881b-b1013a898dc3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/1f223759-0b51-4e1f-881b-b1013a898dc3/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/1f223759-0b51-4e1f-881b-b1013a898dc3/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/phpspec.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/phpunit.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/doc/swagger.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/nelmio_api_doc.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/sensio_framework_extra.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/routes/annotations.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/routes/nelmio_api_doc.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker/entrypoint.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker/nginx.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker/php.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20250113082244.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/swagger.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/swagger/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/ArgumentResolver/DtoArgumentResolver.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/OrderController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/ProductController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/SwaggerController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Doctrine/ProductsArrayType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Dto/CreateOrder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Dto/DtoInterface.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Order.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/ValueObject/Product.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Enum/OrderStatus.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/EventListener/ExceptionListener.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/OrderRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Service/OrderService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Service/ProductApiClient.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Service/ProductApiIntegration.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Service/RedisService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/order/index.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Service/OrderServiceTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compose.override.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/cache.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/cache.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/debug.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/doctrine.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/doctrine.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/web_profiler.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+    <list default="true" id="7039a778-e59a-4896-9552-cfb9793b0664" name="Changes" comment="Initial">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -297,15 +237,36 @@
       <workItem from="1736342426745" duration="1844000" />
       <workItem from="1736598102312" duration="6695000" />
       <workItem from="1736675758549" duration="54298000" />
-      <workItem from="1736752183311" duration="3312000" />
+      <workItem from="1736752183311" duration="3913000" />
     </task>
+    <task id="LOCAL-00001" summary="Initial">
+      <created>1736757041227</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1736757041227</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Initial" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
