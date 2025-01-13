@@ -44,6 +44,25 @@ Use Docker Compose to build and run the application:
    docker-compose up --build -d
    ```
 
+### 4. Install dependencies by composer
+
+Go into php container
+   ```bash
+   docker exec -it php_app bash
+   ```
+Install composer dependencies
+   ```bash
+   composer install --no-dev --no-scripts --optimize-autoloader
+   ```
+
+### 5. Init database
+
+Still on docker php_app container run commend to build database 
+```bash
+php bin/console doctrine:database:create --if-not-exists
+php bin/console doctrine:migrations:migrate --no-interaction 
+```
+
 ## Usage
 
 ### API Endpoints
@@ -65,7 +84,7 @@ The API is documented using Swagger. After starting the application, you can acc
 
 ### Running Tests
 
-To run the test suite:
+To run the test suite (on php docker container):
 
 ```bash
 php bin/phpunit

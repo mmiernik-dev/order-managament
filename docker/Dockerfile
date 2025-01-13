@@ -1,5 +1,7 @@
 FROM php:8.1-fpm
 
+FROM php:8.1-fpm
+
 RUN apt-get update && apt-get install -y \
 git \
 curl \
@@ -20,14 +22,9 @@ RUN pecl install redis \
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 WORKDIR /var/www/html
-
-#Copy env parameters
-COPY .env.dev /var/www/html/.env
-# Copy aplication code
 COPY . .
 
-# Composer dependency instalation
-RUN composer install --prefer-dist --optimize-autoloader
+RUN composer install --no-dev --no-scripts --optimize-autoloader
 
 COPY docker/entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
@@ -35,3 +32,7 @@ ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
 
 EXPOSE 9000
 CMD ["php-fpm"]
+
+
+
+
