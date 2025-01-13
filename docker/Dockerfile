@@ -1,6 +1,5 @@
 FROM php:8.1-fpm
 
-# Instalacja wymaganych pakietów systemowych
 RUN apt-get update && apt-get install -y \
 git \
 curl \
@@ -17,16 +16,17 @@ libcurl4-openssl-dev \
 RUN pecl install redis \
     && docker-php-ext-enable redis
 
-# Instalacja kompozytora
+# Composer instalation
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# Ustawienie katalogu roboczego
 WORKDIR /var/www/html
 
-# Kopiowanie kodu aplikacji
+#Copy env parameters
+COPY .env.dev /var/www/html/.env
+# Copy aplication code
 COPY . .
 
-# Instalacja zależności projektu
+# Composer dependency instalation
 RUN composer install --prefer-dist --optimize-autoloader
 
 COPY docker/entrypoint.sh /usr/local/bin/entrypoint.sh
