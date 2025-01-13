@@ -52,7 +52,7 @@ Go into php container
    ```
 Install composer dependencies
    ```bash
-   composer install --no-dev --no-scripts --optimize-autoloader
+   composer install --optimize-autoloader
    ```
 
 ### 5. Init database

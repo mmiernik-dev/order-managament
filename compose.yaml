@@ -11,7 +11,7 @@ services:
       - ./php.ini:/usr/local/etc/php/php.ini
     working_dir: /var/www/html
     ports:
-      - "9000:9000"
+      - "9001:9000"
     environment:
       - APP_ENV=dev
     depends_on:
