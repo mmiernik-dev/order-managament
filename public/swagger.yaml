@@ -1,0 +1,254 @@
+openapi: 3.0.0
+info:
+  title: API Documentation
+  description: API for task
+  version: 1.0.0
+paths:
+  /products:
+    get:
+      summary: Get a list of products from external api
+      tags:
+        - Products
+      responses:
+        '200':
+          description: Returns a list of products
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product'
+
+  /products/{id}:
+    get:
+      summary: Fetch a single product
+      description: Retrieves details of a single product by its ID.
+      tags:
+        - Products
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The ID of the product
+          schema:
+            type: integer
+            example: 1
+      responses:
+        '200':
+          description: Product details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        '400':
+          description: Bad request
+        '404':
+          description: Product not found
+
+  /orders:
+    get:
+      summary: Get a list of orders
+      tags:
+        - Orders
+      responses:
+        '200':
+          description: Returns a list of products
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/OrderProducts'
+    post:
+      summary: Create a new order
+      description: Creates a new order with the specified username and products.
+      tags:
+        - Orders
+      requestBody:
+        description: Order creation payload
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                  example: "Test"
+                products:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 1
+                      title:
+                        type: string
+                        example: "New Product"
+                      price:
+                        type: number
+                        format: float
+                        example: 2.04
+                    required:
+                      - id
+                      - title
+                      - price
+              required:
+                - username
+                - products
+      responses:
+        '201':
+          description: Order successfully created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Order placed successfully
+                  orderId:
+                    type: integer
+                    example: 123
+  /orders/{id}:
+    get:
+      summary: Get a single order
+      tags:
+        - Orders
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The ID of the product
+          schema:
+            type: integer
+            example: 1
+      responses:
+        '200':
+          description: Returns a list of products
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderProducts'
+  /orders/{id}/cancel:
+    delete:
+      summary: Cancel an order
+      description: Cancels an existing order by its ID.
+      tags:
+        - Orders
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The ID of the order to cancel
+          schema:
+            type: integer
+            example: 5
+      responses:
+        '204':
+          description: Order successfully cancelled
+        '404':
+          description: Order not found
+
+  /orders/{id}/recreate:
+    post:
+      summary: Recreate an order
+      description: Recreates a order with a new ID.
+      tags:
+        - Orders
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The ID of the order to recreate
+          schema:
+            type: integer
+            example: 19
+      responses:
+        '200':
+          description: Order successfully recreated
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Order recreated successfully
+                  orderId:
+                    type: integer
+                    example: 456
+        '404':
+          description: Order not found
+
+components:
+  schemas:
+    Product:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 3
+        title:
+          type: string
+          example: White Gold Plated Princess
+        price:
+          type: number
+          format: float
+          example: 9.99
+        description:
+          type: string
+          example: Classic Lorem Ipsum
+        category:
+          type: string
+          example: jewelery
+        image:
+          type: string
+          example: image.png
+        rating:
+          type: object
+          properties:
+            rate:
+              type: number
+              format: float
+              example: 3.9
+            count:
+              type: integer
+              example: 120
+    Order:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 2
+        status:
+          $ref: '#/components/schemas/OrderStatus'
+        username:
+          type: string
+          example: Tester
+    OrderStatus:
+      type: string
+      enum:
+        - pending
+        - cancelled
+        - finished
+      example: pending
+    OrderProducts:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 2
+        createdAt:
+          type: string
+          example: "2025-01-12T14:17:45+00:00"
+        status:
+          $ref: '#/components/schemas/OrderStatus'
+        username:
+          type: string
+          example: Tester
+        products:
+          type: array
+          items:
+            $ref: '#/components/schemas/Product'

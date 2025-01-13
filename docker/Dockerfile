@@ -1,0 +1,37 @@
+FROM php:8.1-fpm
+
+# Instalacja wymaganych pakietów systemowych
+RUN apt-get update && apt-get install -y \
+git \
+curl \
+zip \
+unzip \
+libicu-dev \
+libpq-dev \
+libonig-dev \
+libxml2-dev \
+libzip-dev \
+libcurl4-openssl-dev \
+&& docker-php-ext-install intl opcache pdo pdo_mysql pdo_pgsql zip
+
+RUN pecl install redis \
+    && docker-php-ext-enable redis
+
+# Instalacja kompozytora
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+
+# Ustawienie katalogu roboczego
+WORKDIR /var/www/html
+
+# Kopiowanie kodu aplikacji
+COPY . .
+
+# Instalacja zależności projektu
+RUN composer install --prefer-dist --optimize-autoloader
+
+COPY docker/entrypoint.sh /usr/local/bin/entrypoint.sh
+RUN chmod +x /usr/local/bin/entrypoint.sh
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+
+EXPOSE 9000
+CMD ["php-fpm"]
